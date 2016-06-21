@@ -1,0 +1,22 @@
+{
+  "name": "shopping-list",
+  "version": "1.0.0",
+  "description": "A shopping list app",
+  "main": "server.js",
+  "author": "Stewart McCoy",
+  "dependencies": {
+    "async": "~0.2.8",
+    "body-parser": "^1.15.1",
+    "express": "^3.2.6",
+    "socket.io": "~0.9.14"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "shopping",
+    "list"
+  ],
+  "license": "ISC"
+}
