@@ -1,4 +1,5 @@
 var express = require('express');
+// var storage = require('./storage.js');
 
 var Storage = function() {
     this.items = [];
@@ -28,7 +29,7 @@ Storage.prototype.delete = function(id) {
 };
 
 Storage.prototype.edit = function(editedItem) { 
-    console.log(editedItem);
+    // console.log(editedItem);
     
     var items = this.items;
     
@@ -45,6 +46,7 @@ Storage.prototype.edit = function(editedItem) {
     return item;
 };
 
+// Consider making this a module
 var storage = new Storage();
 storage.add('Broad beans');
 storage.add('Tomatoes');
@@ -70,6 +72,7 @@ app.post('/items', jsonParser, function(req, res) {
 });
 
 app.delete('/items/:id', function(req, res) {
+    
     var id = req.params.id;
     if (!id) { // could also use typeof to verify id === number
         return res.sendStatus(400);
@@ -77,6 +80,9 @@ app.delete('/items/:id', function(req, res) {
 
     var item = storage.delete(id);
 
+    // console.log(res.json(item));
+    // debugger;
+    
     res.status(200).json(item);
 
 });
@@ -95,3 +101,6 @@ app.put('/items/:id', jsonParser, function(req, res) {
 });
 
 app.listen(process.env.PORT || 8080);
+
+exports.app = app;
+exports.storage = storage;
