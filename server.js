@@ -74,12 +74,14 @@ app.post('/items', jsonParser, function(req, res) {
 app.delete('/items/:id', function(req, res) {
     
     var id = req.params.id;
+    console.log("server-side id", id);
     if (!id) { // could also use typeof to verify id === number
         return res.sendStatus(400);
     }
 
     var item = storage.delete(id);
 
+    console.log("server side item", item);
     // console.log(res.json(item));
     // debugger;
     

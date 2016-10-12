@@ -90,7 +90,7 @@ describe('Shopping List', function() {
             .delete('/items/:id')
             .send({'id': 1})
             .then(function (res) {
-                console.log('Line 93 response', res);
+                // console.log('Line 93 response', res);
                 console.log('Line 94 response body', res.body);
             })
             .then(done);

@@ -12,9 +12,11 @@
   },
   "scripts": {
     "start": "node server.js",
-    "test" : "test/test-server.js"
+    "test": "test/test-server.js"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "axios": "^0.12.0"
+  },
   "keywords": [
     "shopping",
     "list"
